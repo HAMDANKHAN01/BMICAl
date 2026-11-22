@@ -21,6 +21,8 @@ def main():
     print("1. Calculate BMI & Category")
     print("2. Find Ideal Weight Range")
     choice = input("Enter choice (1/2): ")
+    def calculate_bmi_prime(bmi):
+    return bmi / 25
 
     if choice == "1":
         w = float(input("Enter Weight (kg): "))
