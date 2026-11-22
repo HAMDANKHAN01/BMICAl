@@ -16,13 +16,15 @@ def ideal_weight_range(height_m):
     max_wt = round(24.9 * (height_m ** 2), 2)
     return min_wt, max_wt
 
+def calculate_bmi_prime(bmi):
+    return round(bmi / 25.0, 2)
+
 def main():
     print("=== BMI Calculator ===")
     print("1. Calculate BMI & Category")
     print("2. Find Ideal Weight Range")
-    choice = input("Enter choice (1/2): ")
-    def calculate_bmi_prime(bmi):
-    return bmi / 25
+    print("3. Calculate BMI Prime")
+    choice = input("Enter choice (1/2/3): ")
 
     if choice == "1":
         w = float(input("Enter Weight (kg): "))
@@ -33,6 +35,9 @@ def main():
         h = float(input("Enter Height (m): "))
         low, high = ideal_weight_range(h)
         print(f"Ideal Weight Range = {low} kg to {high} kg")
+    elif choice == "3":
+        bmi = float(input("Enter BMI: "))
+        print(f"BMI Prime = {calculate_bmi_prime(bmi)}")
     else:
         print("Invalid choice!")
 
